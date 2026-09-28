@@ -1,0 +1,61 @@
+/* Final visual layer: shared travel cues and responsive interaction polish. */
+.hero-image{filter:saturate(.92) contrast(1.04)}
+.hero-shade{background:linear-gradient(90deg,#061826d9 0%,#07172575 52%,#07172532 100%),linear-gradient(0deg,#071725a1 0%,transparent 55%,#07172538 100%)}
+.hero-search:focus-within{box-shadow:0 25px 75px #07172566,0 0 0 2px #ffffffb8}
+.hero-search input:focus-visible,.hero-search select:focus-visible{outline:2px solid var(--ocean);outline-offset:4px;border-radius:3px}
+.intro-section{position:relative}
+.intro-section:before{content:'JKT   ● · · · · · · · · ✈ · · · · · · · · ●   CERITA BERIKUTNYA';position:absolute;top:38px;left:max(48px,calc((100vw - 1320px)/2));right:max(48px,calc((100vw - 1320px)/2));padding-bottom:13px;border-bottom:1px solid #b7d5d5;color:var(--ocean);font-size:.64rem;font-weight:700;letter-spacing:.15em}
+.destination-card{box-shadow:0 14px 34px #07172516}
+.destination-card:after{background:linear-gradient(0deg,#061725da 0%,#07172554 38%,transparent 75%);transition:opacity .35s}
+.destination-card:hover:after{opacity:.88}
+.destination-card>div{transition:transform .35s var(--ease)}
+.destination-card:hover>div{transform:translateY(-5px)}
+.card-image{box-shadow:0 12px 28px #07172518}
+.package-card:focus-within .card-image,.destination-card:focus-visible{outline:3px solid var(--ocean);outline-offset:4px}
+.heart{width:42px;height:42px;transition:transform .25s var(--ease),background .25s,color .25s}
+.heart:hover,.heart.active{transform:scale(1.08);background:var(--sunset);color:var(--navy)}
+.detail-head{background:radial-gradient(circle at 92% 18%,#e5f4f1 0,transparent 34%),linear-gradient(180deg,#f8f8f4,#f2f6f4)}
+.detail-title h1{line-height:.98}
+.gallery{position:relative;box-shadow:0 25px 55px #07172520}
+.gallery img{cursor:zoom-in;transition:transform .6s var(--ease),filter .6s}
+.gallery img:hover{transform:scale(1.035);filter:saturate(1.1)}
+.gallery:after{content:'JELAJAH  /  LIHAT PERJALANAN';position:absolute;left:24px;bottom:20px;pointer-events:none;color:white;text-shadow:0 2px 8px #071725a8;font-size:.64rem;font-weight:700;letter-spacing:.2em}
+.detail-tabs a{transition:color .2s,border-color .2s}
+.detail-tabs a:hover,.detail-tabs a:focus-visible{color:var(--ocean);border-color:var(--ocean)}
+.timeline{border-left:2px dashed #85bbc3}
+.timeline-day:before{width:15px;height:15px;left:-8px;background:var(--sunset);box-shadow:0 0 0 5px #ffe9dc}
+.timeline-day .day-num{color:var(--ocean);font-weight:700}
+.booking-card{border-top:4px solid var(--sunset)}
+.booking-card:before{content:'● · · · · ✈ · · · · ●';display:block;color:var(--ocean);font-size:.75rem;letter-spacing:.24em;margin-bottom:15px}
+.flow-page{background:radial-gradient(circle at 100% 0,#e6f3f1 0,transparent 38%),#f8f9f6}
+.form-panel,.summary-card{box-shadow:0 16px 40px #0717250c}
+.summary-card{border-top:4px solid var(--ocean)}
+.method{transition:border-color .2s,background .2s,transform .2s}
+.method:hover{transform:translateY(-2px);border-color:#86b9c2}
+.trip-card{box-shadow:0 13px 32px #0717250d;transition:transform .25s var(--ease),box-shadow .25s}
+.trip-card:hover{transform:translateY(-3px);box-shadow:0 20px 42px #07172517}
+.confirmation{background:radial-gradient(circle at 50% 24%,#e2f5ee,transparent 44%),var(--cream)}
+.chips button:hover{border-color:var(--ocean);background:#e0f4f3}
+.proof-link{display:inline-flex;padding:0;border:0;background:none;color:var(--ocean);font-size:.78rem;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.image-dialog{max-width:min(92vw,1100px);max-height:90vh;padding:10px;border:0;border-radius:18px;background:#071725;box-shadow:0 30px 90px #07172599;color:white}
+.image-dialog::backdrop{background:#061725dc}
+.image-dialog img{max-height:calc(90vh - 20px);width:auto;object-fit:contain;border-radius:10px}
+.image-dialog button{position:absolute;top:18px;right:18px;width:42px;height:42px;border:0;border-radius:50%;background:#fff;color:var(--navy);font-size:1.6rem;line-height:1}
+@media(max-width:767px){
+  .intro-section:before{left:19px;right:19px;top:28px;content:'JKT  ● · · ✈ · · ●  CERITA BARU';letter-spacing:.1em}
+  .hero-shade{background:linear-gradient(180deg,#0717258c 0%,#07172570 40%,#071725cd 100%)}
+  .hero-search{box-shadow:0 20px 48px #07172566}
+  .gallery:after{left:13px;bottom:112px;font-size:.55rem}
+  .detail-title h1{font-size:clamp(2.9rem,12vw,3.7rem)}
+  .flow-layout{display:flex;flex-direction:column}
+  .flow-layout>*{width:100%}
+  .flow-layout>.summary-card{order:-1;margin:0 0 22px}
+  .admin-panel{padding:18px}
+  .admin-filters{grid-template-columns:1fr}
+  .admin-filters input,.admin-filters select{min-width:0}
+  .admin .table-scroll:before{content:'Geser tabel untuk melihat semua kolom →';display:block;position:sticky;left:0;width:max-content;margin:0 0 10px;color:var(--ocean);font-size:.7rem;font-weight:700}
+  .trip-card:hover{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .gallery img,.destination-card>div,.destination-card:after,.trip-card,.method,.heart{transition:none!important}
+}
