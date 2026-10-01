@@ -60,5 +60,25 @@ const seedBookings = [
   {id:'TRV-00124',userId:'USR-DEMO-4',customerName:'Nadia Surya',packageId:'PKG-002',scheduleId:'SCH-2-2',departureDate:'2026-12-13',participantCount:1,participants:[{name:'Nadia Surya',identityType:'KTP',identity:''}],contactPhone:'081234567893',contactEmail:'nadia@example.com',notes:'',subtotal:3850000,discount:0,total:3850000,promoCode:'',bookingStatus:'confirmed',paymentStatus:'paid',createdAt:'2026-09-18T10:00:00+07:00'},
   {id:'TRV-00125',userId:'USR-DEMO-5',customerName:'Farhan Akbar',packageId:'PKG-006',scheduleId:'SCH-6-1',departureDate:'2026-11-13',participantCount:2,participants:[{name:'Farhan Akbar',identityType:'Passport',identity:''},{name:'Mira Akbar',identityType:'Passport',identity:''}],contactPhone:'081234567894',contactEmail:'farhan@example.com',notes:'',subtotal:19600000,discount:0,total:19600000,promoCode:'',bookingStatus:'waiting_verification',paymentStatus:'submitted',proofName:'bukti-seoul-demo.pdf',createdAt:'2026-09-27T11:00:00+07:00'},
 ];
-window.JelajahData = {destinations,seedPackages,promos,seedReviews,seedBookings};
+const paymentProviders = {
+  bank_transfer:{label:'Transfer Bank',description:'Transfer manual melalui aplikasi bank.',providers:[
+    {id:'bca',name:'BCA',number:'123 456 7890',holder:'Jelajah Travel',instruction:'Transfer sesuai total tagihan, lalu simpan bukti transaksi.'},
+    {id:'mandiri',name:'Bank Mandiri',number:'138 000 789 4567',holder:'Jelajah Travel',instruction:'Transfer sesuai total tagihan, lalu simpan bukti transaksi.'},
+    {id:'bni',name:'BNI',number:'012 345 6789',holder:'Jelajah Travel',instruction:'Transfer sesuai total tagihan, lalu simpan bukti transaksi.'},
+    {id:'bri',name:'BRI',number:'1234 01 000789 56',holder:'Jelajah Travel',instruction:'Transfer sesuai total tagihan, lalu simpan bukti transaksi.'}
+  ]},
+  virtual_account:{label:'Virtual Account',description:'Bayar melalui nomor virtual account bank pilihan.',providers:[
+    {id:'bca',name:'BCA Virtual Account',number:'8808 1234 5678',instruction:'Pilih pembayaran Virtual Account di aplikasi bank, lalu masukkan nomor ini.'},
+    {id:'mandiri',name:'Mandiri Virtual Account',number:'8950 1234 5678',instruction:'Pilih pembayaran Virtual Account di aplikasi bank, lalu masukkan nomor ini.'},
+    {id:'bni',name:'BNI Virtual Account',number:'9880 1234 5678',instruction:'Pilih pembayaran Virtual Account di aplikasi bank, lalu masukkan nomor ini.'},
+    {id:'bri',name:'BRI Virtual Account',number:'8888 1234 5678',instruction:'Pilih pembayaran Virtual Account di aplikasi bank, lalu masukkan nomor ini.'}
+  ]},
+  ewallet:{label:'E-Wallet',description:'Bayar melalui dompet digital pilihan.',providers:[
+    {id:'dana',name:'DANA',number:'0812 3456 7890',holder:'Jelajah Travel',instruction:'Kirim ke nomor dompet digital ini sesuai total tagihan.'},
+    {id:'gopay',name:'GoPay',number:'0812 3456 7891',holder:'Jelajah Travel',instruction:'Kirim ke nomor dompet digital ini sesuai total tagihan.'},
+    {id:'ovo',name:'OVO',number:'0812 3456 7892',holder:'Jelajah Travel',instruction:'Kirim ke nomor dompet digital ini sesuai total tagihan.'},
+    {id:'shopeepay',name:'ShopeePay',number:'0812 3456 7893',holder:'Jelajah Travel',instruction:'Kirim ke nomor dompet digital ini sesuai total tagihan.'}
+  ]}
+};
+window.JelajahData = {destinations,seedPackages,promos,seedReviews,seedBookings,paymentProviders};
 })();
